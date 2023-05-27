@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% load static %}
+{% block body %}
+<div class="shell border">
+    <div class="container">
+        <br>
+        <div class="row">
+            <h1 class="text-center">{{ sale.name_of_sale}} </h1><br><br>
+            <br><br>
+            <div class="col-3"><img src="{{ sale.img.url }}" width="100%" align="center"></div>
+            <div class="col"><p class="">{{ sale.text_details}} </p></div>
+        </div>
+        <br>
+    </div>
+</div>
+{% endblock body %}

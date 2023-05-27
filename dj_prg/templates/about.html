@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+{% load static %}
+{% block body %}
+<div class="container">
+    <div class="row g-2">
+        <div class="col-6">
+            <div class="p-3 text-center">
+                <img src="/static/main.jpg" width="70%" style="border-radius: 5%">
+            </div>
+        </div>
+        <div class="col-6">
+            <div class="p-3">
+                <h1 class="sale">О нас</h1>
+                <p>
+                    BEAUTY SALON    - это пространство красоты, в котором мы рады видеть наших гостей в любое время дня.
+                    Салон красоты создан для тех, кто в первую очередь любит себя и знает, что такое
+                    качественное и профессиональное обслуживание. Ведь все усилия мастеров направлены на то, чтобы
+                    проведенное в нашем салоне время даровало Вам только прекрасное настроение, самые лучшие впечатления
+                    и наслаждение от своего отражения в зеркале и покоя на душе.
+                    А наши специалисты позаботятся о том, чтобы пребывание у нас было комфортным, а результат услуги
+                    превзошёл все ваши ожидания.
+                </p>
+                <p>
+                    Наш салон — это место, созданное опытными специалистами для всех, кто желает всегда оставаться
+                    ярким, ухоженным, стильным и чувствовать себя успешным. А цены на услуги салона красоты Вас приятно
+                    удивят!
+                    Мы дарим нашим клиентам настоящий талант, знания и опыт, собранные мировой практикой, новейшие
+                    безопасные технологии.
+                </p>
+                <p>
+                    Человек, одаренный естественной красотой, подобен драгоценному камню. Чтобы каждый смог насладиться
+                    его сиянием, необходима достойная оправа. А это уже забота надежных рук квалифицированных
+                    специалистов салона красоты BEAUTY SALON.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid">
+    <h1 class="sale text-center line">Наша команда</h1><br>
+    <div class="row row-cols-6 g-2">
+        {% for worker in workers %}
+        <div class="">
+            <h4 class="card-title text-center sale">{{ worker.first_name}}</h4>
+            <img src="{{ worker.img.url }}" width="50%" style="border-radius: 50%">
+            <p style="color: grey">Спектр оказываемых услуг:</p>
+            {% for i in worker.get_service_category %}
+            <div class="card-text" style="color: grey; font-size: 13px">{{ i }}</div>
+            {% endfor %}
+        </div>
+        {% endfor %}
+    </div>
+</div>
+<h1 class="sale text-center line">Наши работы</h1><br>
+<div class="container-fluid">
+    <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3">
+        {% for img in our_works%}
+        <div class="col-6">
+            <img src="{{ img.img.url }}" width='100%' style="border-radius: 5%">
+        </div>
+        {% endfor %}
+    </div>
+</div>
+</div>
+{% endblock body%}

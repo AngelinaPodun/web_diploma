@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% load static %}
+{% block body %}
+<div class="shell border">
+    <div class="container">
+        <h1 class="text-center">{{ service.name}}</h1>
+        {% for item in service.servicecategory_set.all %}
+        <br>
+        <div class="row">
+            <br><br>
+            <h4 class="container">{{ item.name_of_category }}</h4>
+            {% for i in item.theservice_set.all %}
+
+            <p class="col-sm-6 col-md-10">{{ i.name_of_service }}</p>
+            <p class="col-6 col-md-2">{{ i.price }} BYN</p>
+
+            {% endfor %}
+        </div>
+        {% endfor %}
+    </div>
+
+</div>
+
+{% endblock body %}

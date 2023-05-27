@@ -1,0 +1,145 @@
+{% extends "base.html" %}
+{% load static %}
+{% block body %}
+<div id="myCarousel" class="carousel slide " data-bs-ride="carousel">
+    <div class="carousel-indicators">
+        <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-label="Slide 1"
+                aria-current="true"></button>
+        <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2" class=""></button>
+        <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3" class=""></button>
+    </div>
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img src="static/pexels-photo-3194901.jpg" class="bd-placeholder-img" width="100%" height="100%"
+                 xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice"
+                 focusable="false">
+            <rect width="100%" height="100%" fill=""></rect>
+            </img>
+            <div class="container">
+                <div class="carousel-caption text-start">
+                    <h1>Акции.</h1>
+                    <h5> Ознакомьтесь со списком наших акций и попишитесь на обновления, чтобы быть в курсе новых спецпредложений.</h5>
+                    <p><a class="btn btn-lg btn-success" href="/sale">Подробнее</a></p>
+                </div>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <img src="static/65.jpg" class="bd-placeholder-img" width="100%" height="100%"
+                 xmlns="http://www.w3.org/2000/svg"
+                 aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false">
+            <rect width="100%" height="100%" fill="#777"></rect>
+            </img>
+
+            <div class="container">
+                <div class="carousel-caption">
+                    <h1>О салоне.</h1>
+                    <h5>За подробной информацией о салоне и адресами переходите по ссылке.</h5>
+                    <p><a class="btn btn-lg btn-success" href="/about">Подробнее</a></p>
+                </div>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <img src="static/62.jpg" class="bd-placeholder-img" width="100%" height="100%"
+                 xmlns="http://www.w3.org/2000/svg"
+                 aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false">
+            <rect width="100%" height="100%" fill="#777"></rect>
+            </img>
+
+            <div class="container">
+                <div class="carousel-caption text-start">
+                    <h1>Новости.</h1>
+                    <h5>Интересные статьи в рубрике новости.</h5>
+                    <p><a class="btn btn-lg btn-success" href="/news">Подробнее</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+</div>
+<div class="line text-center">
+    <div class="container">
+
+
+    <h1 class="text-center sale ">Услуги нашего салона</h1>
+    <br>
+    <div>
+
+    </div>
+    <p>Мы всегда в курсе последних трендов в индустрии моды и красоты! Прямое партнёрство с лучшими
+        косметическими и
+        космецевтическими брендами мировой beauty-индустрии дает нам возможность первыми узнавать о новинках,
+        регулярно обновляя ассортимент предоставляемых услуг!</p>
+    <p>
+        Реалии нашей жизни, постоянная занятость, хлопоты и различные негативные факторы оказывают серьезное влияние на
+        состояние кожи и здоровье всего организма. Салоны красоты, услуги которых помогают нам бороться с
+        косметическими, возрастными или другими недостатками стали в последнее время очень популярны.</p>
+
+        <p>Посещение салонов красоты дает возможность осуществлять косметический уход за состоянием кожи, оздоравливать с
+        помощью процедур ногти, волосы. С помощью массажа можно снять усталость и болевые ощущения, отдохнуть после
+        больших нагрузок на работе или просто расслабиться, проведя приятно время.</p>
+
+        <p>Салоны красоты и услуги, предоставляемые ими, позволяют решать не только косметические проблемы. Оздоровительный
+        массаж благотворно влияет на состояние всего организма, улучшает кровообращение и стабилизирует работу всех
+        внутренних органов. С помощью лимфодренажного массажа удается избавиться от лишнего веса и проявлений целлюлита.
+        Влияние таких процедур на организм трудно переоценить и все больше людей пользуются услугами салонов красоты.
+    </p>
+        </div>
+</div>
+<div class="container">
+    <br>
+
+    <div class="service-row">
+        <div class="container shell border " style="margin: 30px 30px 30px 30px">
+            {% for one in services %}
+            <div class="row nav justify-content-center border-bottom pb-3 mb-3">
+                <div class="col ">
+                    <img src="{{ one.img.url }}" width=60%>
+                </div>
+                <div class="col container-colonka">
+                    <h3><a class="link-success sale " href="{{ one.id }}"> {{ one.name }}</a></h3>
+                    <p>{{ one.text_details }}</p>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+    </div>
+</div>
+<section><!--Feedback-->
+    <div class="container-fluid mail-block">
+        <div class="mail-block-wrap">
+            <h3>Подписка на новости</h3>
+            <p class="news-desc">{{ subscribe }}</p>
+            <form method="post" action="">
+                {% csrf_token %}
+                <div class="newsletter-wrap">
+
+                </div>
+                <p id="send-valid-newsletter-email" class="text-danger"></p>
+                {% if success %}
+                <p class="text-success text-newsletter-success">Спасибо, что подписались!</p>
+                {% else %}
+                <div class="container">
+                    <div class="col-md-6 offset-md-3">
+                        <div class="form-group">
+                            {{ form.email }}
+                        </div>
+                        <br>
+                        <button id="send-newsletter" class="btn btn-secondary" type="submit">Подписаться</button>
+                    </div>
+                </div>
+                {% endif %}
+            </form>
+        </div>
+    </div>
+</section>
+
+
+{% endblock body %}

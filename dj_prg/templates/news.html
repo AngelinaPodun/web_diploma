@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% load static %}
+{% block body %}
+
+<div class="shell border">
+    <div id="main">
+        <div id="content" class="left">
+            <div class="projects">
+                <h3>Новости</h3>
+                {% for post in post_list %}
+                <div class="item">
+                    <div class="image left">
+                        <a href="#"><img src="{{ post.img.url }}" width="180px" alt=""
+                                         class="figure-img img-fluid rounded"></a>
+                    </div>
+                    <div class="text left">
+                        <h3><a href="{{ post.id }}" class="sale link-success text-decoration-none"> {{ post.title }}</a>
+                        </h3>
+                        <p>{{ post.promo_info }}</p>
+                        <p style="color: grey; font-size: 14px" align="right">{{ post.data }}</p>
+                        <p><a class="btn btn-sm btn-success" href="{{ post.id}}"> Читать далее </a></p>
+                    </div>
+                    <div class="cl">&nbsp;</div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="cl">&nbsp;</div>
+    </div>
+</div>
+
+
+{% endblock body %}

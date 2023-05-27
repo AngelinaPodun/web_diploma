@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% load static %}
+{% block body %}
+
+<div class="container">
+    <div class="row">
+        <div class="col"></div>
+        <div class="col-6 text-center">
+            <form class="row g-2" method="post" action="">
+                {% csrf_token %}
+                <p class="" style="color:grey; font-size: 18px"> {{ words }} </p>
+                <p class="" style="color:grey; font-size: 18px"> {{ words_2 }} </p>
+                <div class="col-12">
+                    {{ form.name }}
+                </div>
+                <div class="col-12">
+                    {{ form.phone}}
+                </div>
+                <div class="col-12">
+                    {{ form.email }}
+                </div>
+                {% if success %}
+                <div class="col-12">
+                    <textarea class="form-control" placeholder='Детали процедуры*' name="details"></textarea>
+                </div>
+                <div id="emailHelp" class="form-text">Укажите желаемую процедуру.
+        </div>
+        <div class="col-1">
+            <button type="submit" class="btn btn-success"> Отправить</button>
+        </div>
+        {% endif %}
+        </form>
+    </div>
+    <div class="col"></div>
+</div>
+</div>
+{% endblock body %}

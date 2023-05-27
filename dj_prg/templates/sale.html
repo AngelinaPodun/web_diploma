@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% load static %}
+{% block body %}
+<div class="container-fluid" style=" position: relative;">
+    <img src="/static/photosale.png" style="height: 500px; wight: 40px">
+    <div class="sale-post sale wow">
+        <h1>Будьте в курсе наших акций</h1>
+        <h2>Скидка 10% на первое посещение</h2>
+        <img src="">
+    </div>
+</div>
+<div class="sale-name text-center line" style="margin-top: 0px; height: 150px; padding-top: 20px">
+    Акции
+</div>
+<div class="container">
+    <div class="row row-cols-3 g-2">
+        {% for item in info %}
+        <div class="col p-3 ">
+            <div class='card ' style="height: 18rem; padding: 5% ">
+                <div class="card-body">
+                    <h3 class="sale">{{ item.name_of_sale }} </h3>
+                </div>
+                <div class="card-footer bg-transparent ">
+                    <div class="row">
+                        <div class="col">
+                            <a class="link-success " href="{{ item.id }}">Узнать подробнее</a>
+                        </div>
+                        <div class="col">
+                            <p class="sale " style="color: grey" align="right">{{ item.data }}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock body %}
